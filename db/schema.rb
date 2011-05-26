@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524184202) do
+ActiveRecord::Schema.define(:version => 20110525213325) do
 
   create_table "aspect_memberships", :force => true do |t|
     t.integer  "aspect_id",  :null => false
@@ -249,6 +249,7 @@ ActiveRecord::Schema.define(:version => 20110524184202) do
     t.string   "provider_display_name"
     t.string   "actor_url"
     t.integer  "objectId"
+    t.integer  "root_id"
   end
 
   add_index "posts", ["author_id"], :name => "index_posts_on_person_id"

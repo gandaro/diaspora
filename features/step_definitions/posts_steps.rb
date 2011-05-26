@@ -8,3 +8,9 @@ When /^I post a photo with a token$/ do
 JSON
   page.driver.post(activity_streams_photos_path, json.merge!(:auth_token => @me.authentication_token))
 end
+
+Given /^"([^"]*)" has a public post with text "([^"]*)"$/ do |email, text|
+  user = User.find_by_email(email)
+  user.post(:status_message, :text => text, :public => true, :to => user.aspects)
+end
+

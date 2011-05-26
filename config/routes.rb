@@ -6,6 +6,8 @@ Diaspora::Application.routes.draw do
 
   # Posting and Reading
 
+  resources :reshares
+
   resources :aspects do
     get 'manage'                    => :manage, :on => :collection
     put 'toggle_contact_visibility' => :toggle_contact_visibility

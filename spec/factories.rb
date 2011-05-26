@@ -75,6 +75,11 @@ Factory.define(:status_message) do |m|
   end
 end
 
+Factory.define :reshare do |r|
+  r.association(:root, :public => true, :factory => :status_message)
+  r.association(:author, :factory => :person)
+end
+
 Factory.define :photo do |p|
   p.image File.open( File.dirname(__FILE__) + '/fixtures/button.png')
 end
