@@ -537,8 +537,9 @@ ul.as-selections
       :left 0
       :right 0
 
-  :border
-    :bottom 1px dotted #aaa
+  &:not(:last-child)
+    :border
+      :bottom 1px dotted #aaa
 
   .youtube-player, .vimeo-player
     :border none
